@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import Chats from "./components/Chats"
+import NewChat from "./components/NewChat"
+import Start from "./components/Start"
+import WhatsAppLogo from "./assets/whatsapp-logo.png"
 
-function App() {
+export default function App() {
+  const handleLoginSuccess = (IdInstance: string, ApiTokenInstance: string) => {
+    localStorage.setItem("IdInstance", IdInstance)
+    localStorage.setItem("ApiTokenInstance", ApiTokenInstance)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className='app-container'>
+        <div className='sidebar'>
+          <div className='header'>
+            <img src={WhatsAppLogo} alt='WhatsApp Logo' />
+            <h1>WhatsApp Web</h1>
+          </div>
+          <div className='chat-list'>
+            <ul>
+              <li>
+                <Link to='/'>
+                  Start
+                </Link>
+              </li>
+              <li>
+                <Link to='/chats'>Chats</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className='m-5'>
+          <Routes>
+            <Route
+              path='/'
+              element={<Start onSuccess={handleLoginSuccess} />}
+            />
+            <Route path='/chats' element={<Chats />} />
+            <Route path='/chats/:id' element={<NewChat />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  )
 }
-
-export default App;

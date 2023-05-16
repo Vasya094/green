@@ -1,0 +1,144 @@
+.app-container {
+  display: flex;
+  height: 80vh;
+}
+
+.sidebar {
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 100vh;
+}
+
+.header {
+  align-items: center;
+  background-color: #075e54;
+  color: #fff;
+  display: flex;
+  padding: 10px;
+}
+
+.header img {
+  margin-right: 10px;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.search-bar {
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.search-bar input[type="text"] {
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.chat-list {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.chat-item {
+  align-items: center;
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.chat-item img {
+  border-radius: 50%;
+  height: 50px;
+  margin-right: 10px;
+  width: 50px;
+}
+
+.chat-item.active {
+  background-color: #f6f6f6;
+}
+
+.chat-info h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.chat-info p {
+  color: #777;
+  font-size: 14px;
+}
+
+.chat-window {
+  display: flex;
+  width: 75vw;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.header {
+  align-items: center;
+  background-color: #075e54;
+  color: #fff;
+  display: flex;
+  height: 85px;
+  padding: 15px;
+}
+
+.header img {
+  border-radius: 50%;
+  height: 40px;
+  margin-right: 10px;
+  width: 40px;
+}
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.message {
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+  max-width: 70%;
+  padding: 10px 15px;
+  word-wrap: break-word;
+}
+
+.sent {
+  background-color: #dcf8c6;
+  float: right;
+}
+
+.received {
+  background-color: #92e8f3;
+  float: right;
+  width: max-content;
+}
+
+
+form {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+}
+
